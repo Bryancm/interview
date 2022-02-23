@@ -29,6 +29,8 @@ export const TileButton: FC<Props> = ({letter, index, selectLetter, selected, va
 
 const styles = StyleSheet.create({
   tile: {
+    overflow: 'hidden',
+    borderRadius: 6,
     width: 60,
     height: 60,
     margin: 5,
@@ -47,6 +49,5 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 8,
   },
 });
