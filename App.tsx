@@ -23,28 +23,36 @@ interface Tile {
 }
 
 const App = () => {
-  const [board, setBoard] = useState<Array<Array<Tile>> | null>(null);
+  const [board, setBoard] = useState<Tile[][] | null>(null);
   const [word, setWord] = useState<string>('');
   const [message, setMessage] = useState<string>('');
 
   const fillBoard = () => {
     try {
-      let newBoard: Array<Array<Tile>> = [[], [], [], []];
-      const letters = testBoard2.board;
+      let newBoard: Tile[][] = [[], [], [], []];
+      const letters = [...testBoard2.board];
       let letterIndex = 0;
+
       for (let i = 0; i < 4; i++) {
         for (let j = 0; j < 4; j++) {
-          newBoard[i][j] = {letter: letters[letterIndex], selected: false, canBeSelected: false};
+          // Random order
+          // const letter = letters.splice(Math.floor(Math.random() * letters.length), 1)[0];
+
+          // Normal order
+          const letter = letters[letterIndex];
+
+          newBoard[i][j] = {letter, selected: false, canBeSelected: false};
           letterIndex++;
         }
       }
+
       setBoard(newBoard);
     } catch (error) {
       console.log('FILL_BOARD_ERROR: ', error);
     }
   };
 
-  const clearCanBeSelected = (board: Array<Array<Tile>>) => {
+  const clearCanBeSelected = (board: Tile[][]) => {
     for (let i = 0; i < 4; i++) {
       for (let j = 0; j < 4; j++) {
         board[i][j].canBeSelected = false;
@@ -52,7 +60,7 @@ const App = () => {
     }
   };
 
-  const setCanBeSelected = (board: Array<Array<Tile>>, index: Array<number>) => {
+  const setCanBeSelected = (board: Tile[][], index: number[]) => {
     const i = index[0];
     const j = index[1];
 
@@ -67,23 +75,25 @@ const App = () => {
     if (i + 1 <= 3 && j + 1 <= 3) board[i + 1][j + 1].canBeSelected = true;
   };
 
-  const selectLetter = (index: Array<number>) => {
+  const selectLetter = (index: number[]) => {
     if (board) {
+      const newBoard = [...board];
       const i = index[0];
       const j = index[1];
-      const newBoard = [...board];
-      if (word && !newBoard[i][j].canBeSelected) return setMessage('You can only select neighbor tiles');
+
       if (word && newBoard[i][j].selected) return;
+      if (word && !newBoard[i][j].canBeSelected) return setMessage('You can only select neighbor tiles');
+
+      newBoard[i][j].selected = true;
       clearCanBeSelected(newBoard);
       setCanBeSelected(newBoard, index);
-      if (!newBoard[i][j].selected) setWord(word + newBoard[i][j].letter);
-      newBoard[i][j].selected = true;
+      setWord(word + newBoard[i][j].letter);
       setBoard(newBoard);
       setMessage('');
     }
   };
 
-  const clear = () => {
+  const clearWord = () => {
     fillBoard();
     setWord('');
     setMessage('');
@@ -107,7 +117,7 @@ const App = () => {
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.secondaryText}>Clear word</Text>
-        <TouchableOpacity activeOpacity={0.8} onPress={clear} style={styles.clearButton}>
+        <TouchableOpacity activeOpacity={0.8} onPress={clearWord} style={styles.clearButton}>
           <Text style={[styles.text, {color: '#FAFAFA'}]}>X</Text>
         </TouchableOpacity>
       </View>
