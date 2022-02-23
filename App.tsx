@@ -118,7 +118,7 @@ const App = () => {
       <View style={styles.header}>
         <Text style={styles.secondaryText}>Clear word</Text>
         <TouchableOpacity activeOpacity={0.8} onPress={clearWord} style={styles.clearButton}>
-          <Text style={[styles.text, {color: '#FAFAFA'}]}>X</Text>
+          <Text style={[styles.secondaryText, {color: '#FAFAFA'}]}>X</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.content}>
