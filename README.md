@@ -48,6 +48,6 @@ If you are getting the error 'Could not find proper version of cocoapods' you ca
    npm run android // run on android simulator
 ```
 
-If the screen of the android simulator is black check if it is not locked
-If the app keeps showing a blank screen you can close the app on the android simulator and open it again
+- If the screen of the android simulator is black check if it is not locked
+- the app keeps showing a blank screen you can close the app on the android simulator and open it again
 
