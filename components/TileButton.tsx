@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {Colors} from '../Colors';
+import {Colors} from '../colors';
 
 interface Props {
   letter: string;
