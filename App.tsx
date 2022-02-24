@@ -14,7 +14,7 @@ import testBoard from './test-board-1.json';
 import testBoard2 from './test-board-2.json';
 import dictionary from './dictionary.json';
 import {TileButton} from './components/TileButton';
-import {Colors} from './colors';
+import {Colors} from './Colors';
 
 interface Tile {
   letter: string;
