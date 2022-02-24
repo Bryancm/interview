@@ -38,7 +38,7 @@ If you are getting the error 'Could not find proper version of cocoapods' when y
 
 ```bash
   bundle install
-  // then try to run the pod install command again
+  // try to run pod install again
 ```
 
 - Android
