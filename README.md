@@ -8,7 +8,7 @@ Board game for Enara coding challenge
 
 ## Folder Structure
 
-The project it's initialized with the [React Native CLI](https://reactnative.dev/docs/environment-setup) with the [react-native-template-typescript](https://github.com/react-native-community/react-native-template-typescript)
+The project it's initialized with the [React Native CLI](https://reactnative.dev/docs/environment-setup) and the [react-native-template-typescript](https://github.com/react-native-community/react-native-template-typescript)
 so most of the files and folders belongs to the template, but the code of the challenge are in the next files:
 
     ├── components/TileButton.tsx      
