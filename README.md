@@ -34,11 +34,11 @@ so most of the files and folders belongs to the template, but the code of the ch
   cd ..
   npm run ios // run on ios simulator
 ```
-If you are getting the error 'Could not find proper version of cocoapods' you can run the command:
+If you are getting the error 'Could not find proper version of cocoapods' when you run the 'pod install' command you can run the command:
 
 ```bash
   bundle install
-  
+  // then try to run the pod install command again
 ```
 
 - Android
