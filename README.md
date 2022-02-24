@@ -49,5 +49,5 @@ If you are getting the error 'Could not find proper version of cocoapods' when y
 ```
 
 - If the screen of the android simulator is black check if it is not locked
-- If the app keeps showing a blank screen you can close the app on the android simulator and open it again
+- If the app keeps showing a blank screen try reloading the app or you can close the app on the android simulator and open it again
 
