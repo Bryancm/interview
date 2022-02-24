@@ -18,7 +18,9 @@ so most of the files and folders belongs to the template, but the code of the ch
 ## Installation
 
 - Dependencies
+ 
  The project was initialized with Node v16.13.2 
+ 
   ```bash
   npm install
   
